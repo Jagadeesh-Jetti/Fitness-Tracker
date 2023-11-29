@@ -1,0 +1,32 @@
+.food_main{
+    display: flex;
+    gap: 1rem;
+}
+
+.food_input_div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 10%;
+    padding: 1rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+
+.food_input_div input, button{
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.page_header{
+    font-size: 2rem;
+    margin: 2rem;
+    text-align: left;
+}
+  
+.food_display{
+    text-align: left;
+}
+  
