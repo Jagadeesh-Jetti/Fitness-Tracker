@@ -1,0 +1,25 @@
+.nb_main {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    background-color: #222429;
+  }
+  
+  .nb_right_options {
+    display: flex;
+    padding: 0.4rem;
+    /* background-color: aliceblue; */
+    gap: 1.5rem;
+  }
+  
+  p{
+    font-size: 1.1rem;
+  }
+
+  .hero_name{
+    font-size: 1.5rem;
+    /* padding: 0.4rem; */
+    font-weight: bold;
+    
+  }
