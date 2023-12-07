@@ -1,0 +1,79 @@
+.goals_main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.goals_input_div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid rgb(247, 240, 240);
+    /* border-radius: 10%; */
+    padding: 1rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    color: rgb(238, 226, 226);
+    /* width: 30%; */
+}
+
+.goals_input_div input, button{
+    margin: 1rem;
+    width: 10rem;
+    padding: 0.5rem;
+    background-color: rgb(247, 240, 240) ;
+    color: black;
+    border: none;
+}
+
+.goals_input_div button:hover{
+    cursor: pointer;
+}
+
+.page_header{
+    font-size: 2rem;
+    margin: 2rem;
+    text-align: left;
+}
+
+.goals_display{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+   
+  }
+  
+  .goals_display_layout{
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  
+  .goals_display_child{
+    /* display: flex; */
+    gap: 1rem;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem;
+    color: rgb(235, 238, 241);
+    position: relative;
+  }
+  
+  .goals_display_child:hover{
+    border: 1px solid white;
+  }
+  
+  .goals_content{
+    margin-right: 1rem;
+    /* background-color: wheat; */
+  }
+  .goals_icon{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    /* margin-left: 2rem ; */
+    cursor: pointer;
+    font-size: 1rem;
+  }
