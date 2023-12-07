@@ -1,7 +1,7 @@
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Exercises/exercises.css";
 import { addExercise, deleteExercise, fetchExercises } from "../../actions";
-import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
@@ -37,7 +37,7 @@ export const Exercises = () => {
   return (
     <div className="exercises_main">
       <div className="exercises_input_div">
-        <div className="page_header"> Add Exercise </div>
+        <div className="page_header">Add Exercise</div>
         <input
           type="text"
           name="name"
@@ -49,32 +49,36 @@ export const Exercises = () => {
         <input
           type="number"
           name="duration"
-          placeholder="Duration"
+          placeholder="Duration (min)"
           value={exerciseInput.duration}
           onChange={(e) => handleInput(e)}
         />
 
-        <button onClick={handleSubmit}> Add Exercise </button>
+        <button onClick={handleSubmit}>Add Exercise</button>
       </div>
 
       <div className="exercises_display">
-        <div className="page_header"> Exercises </div>
+        <div className="page_header">Exercises</div>
         <div className="exercises_display_layout">
-          {exercises.map((exercise) => (
-            <div key={exercise.id} className="exercise_display_child">
-              <div className="exercise_content">
-                <p>Name: {exercise.name}</p>
-                <p>Duration: {exercise.duration} min</p>
-                <p>Burned Calories: {exercise.caloriesBurned}</p>
+          {exercises.length > 0 ? (
+            exercises.map((exercise) => (
+              <div key={exercise._id} className="exercise_display_child">
+                <div className="exercise_content">
+                  <p>Name: {exercise.name}</p>
+                  <p>Duration: {exercise.duration} min</p>
+                  <p>Burned Calories: {exercise.caloriesBurned}</p>
+                </div>
+                <div className="exercise_icon">
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    onClick={() => handleDelete(exercise._id)}
+                  />
+                </div>
               </div>
-              <div className="exercise_icon">
-                <FontAwesomeIcon
-                  icon={faTrash}
-                  onClick={() => handleDelete(exercise._id)}
-                />
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No exercises added</p>
+          )}
         </div>
       </div>
     </div>
