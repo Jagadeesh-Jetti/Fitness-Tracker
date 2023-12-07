@@ -88,30 +88,34 @@ export const Food = () => {
             onChange={(e) => handleInput(e)}
           />
 
-          <button onClick={handleSubmit}> Add Food </button>
+          <button onClick={handleSubmit}>Add Food</button>
         </div>
       </div>
 
       <div className="food_display">
-        <div className="page_header"> Food Items </div>
+        <div className="page_header">Food Items</div>
         <div className="food_display_layout">
-          {food.map((foodItem) => (
-            <div className="food_display_child">
-              <div className="food_content">
-                <p> Name: {foodItem.name} </p>
-                <p> Calories: {foodItem.calories} </p>
-                <p> Protein: {foodItem.protein} </p>
-                <p> Carbohydrates: {foodItem.carbohydrates} </p>
-                <p> Fat: {foodItem.fat} </p>
+          {food.length > 0 ? (
+            food.map((foodItem) => (
+              <div key={foodItem._id} className="food_display_child">
+                <div className="food_content">
+                  <p>Name: {foodItem.name}</p>
+                  <p>Calories: {foodItem.calories}</p>
+                  <p>Protein: {foodItem.protein}</p>
+                  <p>Carbohydrates: {foodItem.carbohydrates}</p>
+                  <p>Fat: {foodItem.fat}</p>
+                </div>
+                <div className="food_icon">
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    onClick={() => handleDelete(foodItem._id)}
+                  />
+                </div>
               </div>
-              <div className="food_icon">
-                <FontAwesomeIcon
-                  icon={faTrash}
-                  onClick={() => handleDelete(foodItem._id)}
-                />
-              </div>
-            </div>
-          ))}{" "}
+            ))
+          ) : (
+            <p>No food items added</p>
+          )}
         </div>
       </div>
     </div>
