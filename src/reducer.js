@@ -1,4 +1,4 @@
-import { ADD_EXERCISE, ADD_FOOD, ADD_GOAL, DELETE_EXERCISE, DELETE_FOOD, FETCH_EXERCISES, FETCH_FOOD, FETCH_GOALS } from "./actionTypes"
+import { ADD_EXERCISE, ADD_FOOD, ADD_GOAL, DELETE_EXERCISE, DELETE_FOOD, DELETE_GOAL, FETCH_EXERCISES, FETCH_FOOD, FETCH_GOALS } from "./actionTypes"
 
 export const initialState = {
     exercises: [],
@@ -47,6 +47,11 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 foodItems: state.foodItems.filter((food) => food._id !== action.payload._id)
+            }
+        case DELETE_GOAL:
+            return{
+                ...state,
+                goals: state.goals.filter((goal) => goal._id !== action.payload._id)
             }
         default:
             return state
