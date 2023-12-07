@@ -9,12 +9,16 @@
   .nb_right_options {
     display: flex;
     padding: 0.4rem;
-    /* background-color: aliceblue; */
     gap: 1.5rem;
   }
   
   p{
     font-size: 1.1rem;
+  }
+
+  p:hover{
+    cursor: pointer;
+    color: antiquewhite;
   }
 
   .hero_name{
