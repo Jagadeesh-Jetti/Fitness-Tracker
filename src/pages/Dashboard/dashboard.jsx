@@ -9,7 +9,7 @@ export const Dashboard = () => {
   const food = useSelector((state) => state.foodItems);
   const goals = useSelector((state) => state.goals);
 
-  const caloriesBurned = exercises.reduce(
+  const caloriesBurned = exercises?.reduce(
     (acc, cur) => acc + cur.caloriesBurned,
     0
   );
