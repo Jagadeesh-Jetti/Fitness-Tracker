@@ -62,7 +62,6 @@ export const Food = () => {
             onChange={(e) => handleInput(e)}
           />
         </div>
-
         <div>
           <input
             type="number"
