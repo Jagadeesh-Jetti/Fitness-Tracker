@@ -12,7 +12,7 @@ export const Food = () => {
     name: "",
     calories: "",
     protein: "",
-    carbohydrates: "",
+    carbs: "",
     fat: "",
   });
 
@@ -23,14 +23,14 @@ export const Food = () => {
 
   const handleSubmit = () => {
     dispatch(addFood(foodInput));
-    setFoodInput({
+    setFoodInput((prevFoodInput) => ({
+      ...prevFoodInput,
       name: "",
       calories: "",
       protein: "",
-      carbohydrates: "",
+      carbs: "",
       fat: "",
-    });
-    console.log(foodInput);
+    }));
   };
 
   const handleDelete = (id) => {
@@ -45,6 +45,7 @@ export const Food = () => {
     <div className="food_main">
       <div className="food_input_div">
         <div className="page_header">Add Food</div>
+
         <div>
           <input
             type="text"
@@ -72,8 +73,8 @@ export const Food = () => {
           />
           <input
             type="number"
-            name="carbohydrates"
-            value={foodInput.carbohydrates}
+            name="carbs"
+            value={foodInput.carbs}
             placeholder="Carbs"
             onChange={(e) => handleInput(e)}
           />
@@ -102,7 +103,7 @@ export const Food = () => {
                   <p>Name: {foodItem.name}</p>
                   <p>Calories: {foodItem.calories}</p>
                   <p>Protein: {foodItem.protein}</p>
-                  <p>Carbohydrates: {foodItem.carbohydrates}</p>
+                  <p>Carbs: {foodItem.carbs}</p>
                   <p>Fat: {foodItem.fat}</p>
                 </div>
                 <div className="food_icon">
