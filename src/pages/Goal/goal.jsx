@@ -19,7 +19,6 @@ export const Goal = () => {
   const handleInput = (e) => {
     const { name, value } = e.target;
     setGoalInput((prev) => ({ ...prev, [name]: value }));
-    console.log(goalInput);
   };
 
   const handleSubmit = () => {
@@ -45,7 +44,8 @@ export const Goal = () => {
     <div className="goals_main">
       <div className="goals_input_div">
         <div className="page_header">Add Goal</div>
-        <div>
+
+        <div className="goal_input_set">
           <input
             type="text"
             name="name"
@@ -61,7 +61,7 @@ export const Goal = () => {
             placeholder="Description"
           />
         </div>
-        <div>
+        <div className="goal_input_set">
           <input
             type="date"
             name="createdAt"
@@ -79,7 +79,7 @@ export const Goal = () => {
           />
         </div>
 
-        <div>
+        <div className="goal_input_set">
           <input
             type="text"
             name="status"
